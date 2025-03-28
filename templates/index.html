@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat with GPT</title>
+</head>
+<body>
+    <h2>🧠 GPT Chat</h2>
+    <form action="/generate" method="post">
+        <input type="text" name="prompt" placeholder="Type your message..." style="width: 300px;" required>
+        <button type="submit">Send</button>
+    </form>
+    <hr>
+    {% for prompt, response in chat %}
+        <p><strong>You:</strong> {{ prompt }}</p>
+        <p><strong>GPT:</strong> {{ response }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
